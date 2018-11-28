@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.lists.ListExercise;
+import com.company.lists.ListReverse;
 import com.company.queue.MyQueue;
 import com.company.sorts.hash.HashSort;
 import com.company.sorts.merge.MergeSort;
@@ -9,6 +10,9 @@ import com.company.string.UniqueString;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
+
+import static com.company.utils.ListUtils.printArrayList;
 
 public class Main {
 
@@ -19,7 +23,32 @@ public class Main {
         //testUniqueString();
         //MoneyChange.solve(10);
         //hashJoin();
-        mergeJoin();
+        //mergeJoin();
+        reverseLinkedList();
+    }
+
+    private static void reverseLinkedList(){
+/*
+        ListNode<Integer> firstNode = new ListNode<>(1);
+        ListNode<Integer> secondNode = new ListNode<>(2);
+        ListNode<Integer> thirdNode = new ListNode<>(3);
+
+        firstNode.setNext(secondNode);
+        secondNode.setNext(thirdNode);
+
+        ListReverse list = new ListReverse();
+        list.reverse(firstNode);
+*/
+        List<Integer> arrayList = Arrays.asList(1,2,3,4,5,6);
+
+        System.out.println("Before reversing");
+        printArrayList(arrayList);
+
+        ListReverse<String> listReverse = new ListReverse<>();
+        List<?> list = listReverse.reverse(arrayList);
+
+        System.out.println("After reversing");
+        printArrayList(list);
     }
 
     private static void hashJoin(){
