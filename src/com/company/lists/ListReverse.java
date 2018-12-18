@@ -36,15 +36,15 @@ public class ListReverse<T> {
 
         int size = list.size();
 
-        ListIterator fwd = list.listIterator();
-        ListIterator rev = list.listIterator(size);
+        ListIterator startListIterator = list.listIterator();
+        ListIterator endListIterator = list.listIterator(size);
         Object tmp;
 
         for (int i = 0, mid = size >> 1; i < mid; i++){
-            tmp = fwd.next();
+            tmp = startListIterator.next();
 
-            fwd.set(rev.previous());
-            rev.set(tmp);
+            startListIterator.set(endListIterator.previous());
+            endListIterator.set(tmp);
         }
         return list;
     }
